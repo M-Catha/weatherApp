@@ -42,7 +42,8 @@ body {
 #note {
 	display:none;
 	margin:0 auto;
-	width:80%;
+	width:60%;
+	max-width:500px;
 	font-size:3.0vmin;
 	font-family:'Roboto', sans-serif;
 	color:black;

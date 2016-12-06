@@ -6,8 +6,8 @@ var getWeatherMyCity = function() {
 	// Call location API
 	$.ajax({
 		method: "GET",
-		url: "http://ip-api.com/json",
-		dataType: "json",
+		url: "http://ipinfo.io",
+		dataType: "jsonp",
 		success: function(json) {
 			var userCity = json.city;
 			var userRegion = json.region;
