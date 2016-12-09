@@ -45,7 +45,7 @@ function getWeatherImage(description) {
 	
 	var bgString ="center center no-repeat fixed";
 
-	var weatherObj = {
+	var weatherBGs = {
 		clear: "url('images/ClearDay.jpg')" + bgString,
 		cloudy: "url('images/Cloudy.jpg')" + bgString,
 		rain: "url('images/Rain.jpg')" + bgString,
@@ -54,7 +54,7 @@ function getWeatherImage(description) {
 		fog: "url('images/Foggy.jpg')" + bgString
 	};
 
-	var iconObj = {
+	var icons = {
 		clear: "wi wi-day-sunny",
 		cloudy: "wi wi-day-cloudy",
 		rain: "wi wi-day-rain",
@@ -65,54 +65,30 @@ function getWeatherImage(description) {
 
 	switch(description) {
 		case "clear sky":
-			$("body").css({
-				"background" : weatherObj.clear,
-				"background-size" : "cover"
-			});
-			$("i").attr("class", iconObj.clear)
+			getBackground(weatherBGs.clear, icons.clear);
 			break;
 		case "overcast clouds":
 		case "few clouds":
 		case "scattered clouds":
 		case "broken clouds":
-			$("body").css({
-				"background" : weatherObj.cloudy,
-				"background-size" : "cover"
-			});
-			$("i").attr("class", iconObj.cloudy);
+			getBackground(weatherBGs.cloudy, icons.cloudy)
 			break;
 		case "shower rain":
 		case "moderate rain":
 		case "light rain":
 		case "rain":
 		case "heavy intensity rain":
-			$("body").css({
-				"background" : weatherObj.rain,
-				"background-size" : "cover"
-			});
-			$("i").attr("class", iconObj.rain);
+			getBackground(weatherBGs.rain, icons.rain)
 			break;
 		case "thunderstorm":
-			$("body").css({
-				"background" : weatherObj.lightning,
-				"background-size" : "cover"
-			});
-			$("i").attr("class", iconObj.lightning);
+			getBackground(weatherBGs.lightning, icons.lightning)
 			break;
 		case "light snow":
 		case "snow":
-			$("body").css({
-				"background" : weatherObj.snow,
-				"background-size" : "cover"
-			});
-			$("i").attr("class", iconObj.snow);
+			getBackground(weatherBGs.snow, icons.snow)
 			break;
 		case "mist":
-			$("body").css({
-				"background" : weatherObj.fog,
-				"background-size" : "cover"
-			});
-			$("i").attr("class", iconObj.fog);
+			getBackground(weatherBGs.fog, icons.fog)
 			break;
 		default:
 			break;
@@ -134,6 +110,15 @@ function switchTemp() {
 		tempVal = Math.round((tempVal * (9 / 5)) + 32);
 		$("#tempVal").text(tempVal);
 	}
+}
+
+// Background constructor
+function getBackground(url, icon) {
+	$("body").css({
+		"background":url,
+		"background-size":"cover" 
+	});
+	$("i").attr("class", icon);
 }
 
 // Click functions
