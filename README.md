@@ -6,4 +6,4 @@ Uses the [IP Info](http://ipinfo.io/developers/getting-started) to pull in relev
 
 Live demo here:
 
-[Codepen](http://codepen.io/MCatha/pen/PbePWN)
+[Codepen](http://codepen.io/MCatha/full/PbePWN)
