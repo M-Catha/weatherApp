@@ -8,4 +8,4 @@ Build using HTML, CSS, Javascript, and jQuery.
 
 Live demo here:
 
-[Codepen](http://codepen.io/MCatha/full/PbePWN)
+[Codepen](http://s.codepen.io/MCatha/debug/PbePWN)
