@@ -10,4 +10,4 @@ Build using HTML, CSS, Javascript, and jQuery.
 
 Live demo here:
 
-[Github Pages](https://m-catha.github.io/weatherApp/)
+[Code Pen](http://codepen.io/MCatha/full/PbePWN/)
