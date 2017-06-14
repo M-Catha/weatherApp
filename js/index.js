@@ -2,7 +2,12 @@
 var getWeatherMyCity = function() {
 	
 	$("#weather").remove();
-
+	
+	jQuery.ajaxPrefilter(function(options) {
+        	if (options.crossDomain && jQuery.support.cors) {
+            		options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
+        	}
+    	});
 	// Call location API
 	$.ajax({
 		method: "GET",
@@ -13,6 +18,7 @@ var getWeatherMyCity = function() {
 			var userRegion = json.region;
 			
 			// Once location has successfully returned, call weather API
+			
 			$.ajax({
 				method: "GET",
 				url: "http://api.openweathermap.org/data/2.5/weather?q=" + userCity + "&units=Imperial&appid=9848226dd1b6d9694019891dd7f50ea2",
